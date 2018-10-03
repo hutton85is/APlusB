@@ -1,43 +1,25 @@
 #include <iostream>
-#include <map>
+#include <unordered_map>
+#include "CountSumInCollection.h"
 
 using namespace std;
 
-map<int, int> collection;
-
-int negativeSum(map<int, int> collection){
-    for (map<int, int>::const_iterator it = collection.begin();it->first < 1; it++){
-        cout << it->first << " " << it->second << endl;
-    }
-    return 0;
-}
-
-int positiveSum();
-
-int posNegSum();
-
-int countPossibleSum();
 
 int main()
 {
+    unordered_map<int, int> collection;
     int n = 0, number = 0;
     cin >> n;
     for (int i = 0; i < n; i++){
         cin >> number;
-        if (!collection[number]){
-            collection[number] = 1;
-        }
-        else{
-            collection[number]++;
-        }
+        collection.insert({number, 1});
     }
 
-    negativeSum(collection);
-/*
-    for (map<int, int>::const_iterator it = collection.begin(); it != collection.end(); it++){
-        cout << it->first << endl;
-    }
-*/
+    CountSumInCollection *c = new CountSumInCollection(collection);
+
+    c->write();
+
+    //cout << c << endl;
 
     return 0;
 }
