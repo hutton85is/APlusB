@@ -10,7 +10,7 @@ class CountSumInCollection
         CountSumInCollection();
         CountSumInCollection(std::unordered_map<int, int> collection);
 
-        void write();
+        void insertNew(int number);
 
         std::unordered_map<int, int> getCollection();
 

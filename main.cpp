@@ -7,19 +7,16 @@ using namespace std;
 
 int main()
 {
+    CountSumInCollection *c = new CountSumInCollection();
     unordered_map<int, int> collection;
     int n = 0, number = 0;
     cin >> n;
     for (int i = 0; i < n; i++){
         cin >> number;
-        collection.insert({number, 1});
+        c->insertNew(number);
     }
 
-    CountSumInCollection *c = new CountSumInCollection(collection);
-
-    c->write();
-
-    //cout << c << endl;
+    cout << *c << endl;
 
     return 0;
 }

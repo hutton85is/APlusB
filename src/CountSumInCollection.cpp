@@ -1,5 +1,9 @@
 #include "CountSumInCollection.h"
 
+CountSumInCollection::CountSumInCollection()
+{
+}
+
 CountSumInCollection::CountSumInCollection(std::unordered_map<int, int> collection)
 {
     this->collection = collection;
@@ -9,10 +13,13 @@ std::unordered_map<int, int> CountSumInCollection::getCollection(){
     return collection;
 }
 
-void CountSumInCollection::write(){
-    std::unordered_map<int, int>::iterator it = collection.begin();
-    for (; it != collection.end(); it++){
-        std::cout << it->first << ":" << it->second << std::endl;
+void CountSumInCollection::insertNew(int number){
+    std::unordered_map<int, int>::iterator it = collection.find(number);
+    if (it != collection.end()){
+        it->second++;
+    }
+    else{
+        collection.insert({number, 1});
     }
 }
 
