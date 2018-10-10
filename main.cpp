@@ -17,6 +17,8 @@ int main()
     }
 
     cout << *c << endl;
+    c->findAllSumsAandB();
+    c->printList();
 
     return 0;
 }

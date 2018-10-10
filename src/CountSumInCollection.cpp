@@ -4,15 +4,6 @@ CountSumInCollection::CountSumInCollection()
 {
 }
 
-CountSumInCollection::CountSumInCollection(std::unordered_map<int, int> collection)
-{
-    this->collection = collection;
-}
-
-std::unordered_map<int, int> CountSumInCollection::getCollection(){
-    return collection;
-}
-
 void CountSumInCollection::insertNew(int number){
     std::unordered_map<int, int>::iterator it = collection.find(number);
     if (it != collection.end()){
@@ -20,6 +11,23 @@ void CountSumInCollection::insertNew(int number){
     }
     else{
         collection.insert({number, 1});
+        std::pair<int, int> newPair;
+        newPair.first = number;
+        newPair.second = 1;
+        lis.headInsert(newPair);
+    }
+}
+
+int CountSumInCollection::findAllSumsAandB(){
+
+    return 0;
+}
+
+void CountSumInCollection::printList(){
+    Node<std::pair<int, int> >* curr = lis.returnHead();
+    while (curr){
+        std::cout << curr->data.first << " ";
+        curr = lis.nextNode(curr);
     }
 }
 
