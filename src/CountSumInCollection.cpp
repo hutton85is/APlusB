@@ -18,8 +18,11 @@ void CountSumInCollection::insertNew(int number){
     }
 }
 
-int CountSumInCollection::findAllSumsAandB(){
 
+/** TODO
+    linked list is working all i have to do is run a for loop
+*/
+int CountSumInCollection::findAllSumsAandB(){
     return 0;
 }
 
